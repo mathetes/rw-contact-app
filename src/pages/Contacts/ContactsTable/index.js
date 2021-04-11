@@ -10,6 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from "@material-ui/core/Typography";
+import { CopyToClipboardText } from '../../../components/CopyToClipboardText';
 
 const useStyles = makeStyles({
     table: {
@@ -50,10 +51,10 @@ export const ContactsTable = ({ data }) => {
               <Typography>{contact.dob.age} years</Typography>
             </TableCell>
             <TableCell>
-              {contact.phone}
+              <CopyToClipboardText text={contact.phone}></CopyToClipboardText>
             </TableCell>
             <TableCell>
-              {contact.email}
+            <CopyToClipboardText text={contact.email}></CopyToClipboardText>
             </TableCell>
             <TableCell>
               <Typography>{contact.location.country}</Typography>
